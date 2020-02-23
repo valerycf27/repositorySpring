@@ -16,7 +16,7 @@ public class Evento {
     @Column
     private String hora;
     @Column
-    private int aforo;
+    private long aforo;
     @Column
     private String organizador;
     @Column (name = "artistas_invitados")
@@ -31,6 +31,10 @@ public class Evento {
     private boolean guardado;
     @Column
     private byte[] imagen;
+    @Column
+    private float latitud;
+    @Column
+    private float longitud;
 
 
     // Constructor
@@ -78,11 +82,11 @@ public class Evento {
         this.hora = hora;
     }
 
-    public int getAforo() {
+    public long getAforo() {
         return aforo;
     }
 
-    public void setAforo(int aforo) {
+    public void setAforo(long aforo) {
         this.aforo = aforo;
     }
 
@@ -140,6 +144,22 @@ public class Evento {
 
     public void setImagen(byte[] imagen) {
         this.imagen = imagen;
+    }
+
+    public float getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(float latitud) {
+        this.latitud = latitud;
+    }
+
+    public float getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(float longitud) {
+        this.longitud = longitud;
     }
 }
 

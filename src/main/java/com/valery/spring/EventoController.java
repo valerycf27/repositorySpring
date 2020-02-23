@@ -26,4 +26,37 @@ public class EventoController {
         return listaEventos;
     }
 
+    @RequestMapping("/anadirEvento")
+    public void addVideojuego( String nombre,
+                               String lugar,
+                               String fecha,
+                               String hora,
+                               long aforo,
+                               String organizador,
+                               String artistasInvitados,
+                               String descripcion,
+                               float precio,
+                               float estrellas,
+                               boolean guardado,
+                               float latitud,
+                               float longitud) {
+
+        Evento evento = new Evento();
+        evento.setNombre(nombre);
+        evento.setLugar(lugar);
+        evento.setFecha(fecha);
+        evento.setHora(hora);
+        evento.setAforo(aforo);
+        evento.setOrganizador(organizador);
+        evento.setArtistasInvitados(artistasInvitados);
+        evento.setDescripcion(descripcion);
+        evento.setPrecio(precio);
+        evento.setEstrellas(estrellas);
+        evento.setGuardado(guardado);
+        evento.setLatitud(latitud);
+        evento.setLongitud(longitud);
+
+        repository.save(evento);
+    }
+
 }
