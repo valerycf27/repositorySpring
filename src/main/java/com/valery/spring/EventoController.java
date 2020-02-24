@@ -26,6 +26,20 @@ public class EventoController {
         return listaEventos;
     }
 
+    @RequestMapping("/eventosLugar")
+    public List<Evento> listaEventosLugar(String lugar) {
+
+        List<Evento> listaEventos = repository.findByLugar(lugar);
+        return listaEventos;
+    }
+
+    @RequestMapping("/eventosOrganizador")
+    public List<Evento> listaEventosOrganizador(String organizador) {
+
+        List<Evento> listaEventos = repository.findByOrganizador(organizador);
+        return listaEventos;
+    }
+
     @RequestMapping("/anadirEvento")
     public void addVideojuego( String nombre,
                                String lugar,
