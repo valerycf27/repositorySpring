@@ -10,4 +10,5 @@ public interface EventoRepository extends CrudRepository<Evento, Integer> {
     List<Evento> findByNombre(String nombre);
     List<Evento> findByLugar(String lugar);
     List<Evento> findByOrganizador(String organizador);
+    List<Evento> findByGuardado(boolean guardado);
 }

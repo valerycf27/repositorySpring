@@ -40,6 +40,13 @@ public class EventoController {
         return listaEventos;
     }
 
+    @RequestMapping("/eventosGuardados")
+    public List<Evento> listaEventosGuardados(boolean guardado) {
+
+        List<Evento> listaEventos = repository.findByGuardado(guardado);
+        return listaEventos;
+    }
+
     @RequestMapping("/anadirEvento")
     public void addVideojuego( String nombre,
                                String lugar,
@@ -70,6 +77,14 @@ public class EventoController {
         evento.setLatitud(latitud);
         evento.setLongitud(longitud);
 
+        repository.save(evento);
+    }
+
+    @RequestMapping("/guardarEvento")
+    public void updateEvento(int id){
+
+        Evento evento = repository.findById(id).get();
+        evento.setGuardado(true);
         repository.save(evento);
     }
 

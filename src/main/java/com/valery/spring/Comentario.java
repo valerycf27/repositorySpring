@@ -8,6 +8,8 @@ public class Comentario {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY) //ya que hay un campo autoincremental
     private int id;
+    @Column
+    private String usuario;
     @Column(name = "nombre_evento")
     private String nombreEvento;
     @Column
@@ -51,5 +53,13 @@ public class Comentario {
 
     public void setValoracion(float valoracion) {
         this.valoracion = valoracion;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 }

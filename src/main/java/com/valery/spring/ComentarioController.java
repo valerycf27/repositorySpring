@@ -34,10 +34,11 @@ public class ComentarioController {
      * METODO PARA AÑADIR COMENTARIOS
      */
     @RequestMapping("/addComentario")
-    public void addComentario( String nombreEvento, String contenido,
+    public void addComentario( String usuario, String nombreEvento, String contenido,
                                float valoracion) {
 
         Comentario comentario = new Comentario();
+        comentario.setUsuario(usuario);
         comentario.setNombreEvento(nombreEvento);
         comentario.setContenido(contenido);
         comentario.setValoracion(valoracion);
