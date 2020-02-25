@@ -7,5 +7,5 @@ import java.util.List;
 public interface ComentarioRepository extends CrudRepository<Comentario, Integer> {
 
     List<Comentario> findAll();
-    //List<Comentario> findByVideojuego(String videojuego);
+    List<Comentario> findByNombreEvento(String nombreEvento);
 }

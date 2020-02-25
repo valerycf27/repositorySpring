@@ -20,29 +20,29 @@ public class ComentarioController {
         return listaComentarios;
     }
 
-/*
-    @RequestMapping("/opinionesVideojuego")
-    public List<Comentario> listaOpinionesVideojuego(String videojuego) {
+    /**
+     * METODO PARA SELECCIONAR LOS COMENTARIOS POR EL NOMBRE DEL EVENTO
+     */
+    @RequestMapping("/comentariosNombre")
+    public List<Comentario> listaOpinionesVideojuego(String nombreEvento) {
 
-        List<Comentario> listaOpiniones = repository.findByVideojuego(videojuego);
-        return listaOpiniones;
+        List<Comentario> listaComentarios = repository.findByNombreEvento(nombreEvento);
+        return listaComentarios;
     }
 
- */
-/*
-    @RequestMapping("/add_opinion")
-    public void addOpinion( String autor, String videojuego,
-                            float valoracion,
-                            String comentario) {
+    /**
+     * METODO PARA AÑADIR COMENTARIOS
+     */
+    @RequestMapping("/addComentario")
+    public void addComentario( String nombreEvento, String contenido,
+                               float valoracion) {
 
-        Opinion opinion = new Opinion();
-        opinion.setAutor(autor);
-        opinion.setVideojuego(videojuego);
-        opinion.setValoracion(valoracion);
-        opinion.setComentario(comentario);
+        Comentario comentario = new Comentario();
+        comentario.setNombreEvento(nombreEvento);
+        comentario.setContenido(contenido);
+        comentario.setValoracion(valoracion);
 
-        repository.save(opinion);
+        repository.save(comentario);
     }
 
- */
 }
